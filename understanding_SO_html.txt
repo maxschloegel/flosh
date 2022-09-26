@@ -1,0 +1,21 @@
+
+
+Accepted Anwers class: "answer js-answer accepted-answer js-accepted-answer"
+HTML-Post class: "postcell post-layout--right"
+HTML-Answer class: "answercell post-layout--right"
+
+
+import rich
+from rich.markdown import Markdown
+import markdownify
+from bs4 import BeautifulSoup
+
+so_url = "https://stackoverflow.com/questions/1843422/get-webpage-contents-with-python"
+so_site_response = requests.get(so_url)
+so_site_content = so_site_response.content
+soup = BeautifulSoup(so_site_content)
+answer_bodies = soup.find_all("div", class_="answercell post-layout--right")
+ans = answer_bodies[1]
+md = Markdown(markdownify.markdownify(ans1.renderContents()))
+rich.print(md)
+
