@@ -1,3 +1,4 @@
 0.0.1
+ - refactor: implement `SOAnswer`-class to simplify `SOContent` class
  - setup pyproject.toml with setuptools
  - initialize packages
